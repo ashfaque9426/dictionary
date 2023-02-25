@@ -73,19 +73,23 @@ const displayData = (data) => {
 
     dictionaryContainer.appendChild(article); //verbDescContainer
 
-    nounDescArr.forEach(str => {
-        const li = document.createElement("li");
-        li.innerText = str;
+    if(nounDescArr.length !== 0) {
+        nounDescArr.forEach(str => {
+            const li = document.createElement("li");
+            li.innerText = str;
 
-        document.getElementById("nounDescContainer").appendChild(li);
-    });
+            document.getElementById("nounDescContainer").appendChild(li);
+        });
+    }
 
-    verbDescArr.forEach(str => {
-        const li = document.createElement("li");
-        li.innerText = str;
+    if(verbDescArr.length !== 0) {
+        verbDescArr.forEach(str => {
+            const li = document.createElement("li");
+            li.innerText = str;
 
-        document.getElementById("verbDescContainer").appendChild(li);
-    });
+            document.getElementById("verbDescContainer").appendChild(li);
+        });
+    }
 
 
 }
