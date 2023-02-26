@@ -97,7 +97,7 @@ const displayData = (data) => {
             <h1>${word}</h1>
             <p>${phonetics[0]["text"] === undefined ? phonetics[1]["text"] : phonetics[0]["text"]}</p>
         </header>
-        <h2 id="synonym">Synonym: ${meanings[0]["synonyms"][0] === undefined ? "not found" : meanings[0]["synonyms"][0]}</h2>
+        
         <section id="info"></section>
         <footer><a target="_blank" href="${sourceUrls}">${sourceUrls}</a></footer>
         <button class="mt-3" id="btn" onclick="playAudio('${phonetics[0]['audio']}')">Play Audio</button>
@@ -183,8 +183,14 @@ const displayData = (data) => {
             document.getElementById("adverbContainer").appendChild(li);
         });
     }
-
-
+    
+    // adding synonum dinamically
+    let h2 = document.createElement("h2");
+    h2.setAttribute("id", "synonym");
+    h2.setAttribute("class", "my-3");
+    h2.innerHTML = `Synonym: ${meanings[0]["synonyms"][0] === undefined ? "not found" : meanings[0]["synonyms"][0]}`;
+    const infoContainer = document.getElementById("info");
+    infoContainer.insertBefore(h2, infoContainer.children[-2]);
 }
 
 // dictionary info function from preventing the same code over and over again
