@@ -190,14 +190,14 @@ const displayData = (data) => {
     h2.setAttribute("class", "my-3");
     h2.innerHTML = `Synonym: ${meanings[0]["synonyms"][0] === undefined ? "not found" : meanings[0]["synonyms"][0]}`;
     const infoContainer = document.getElementById("info");
-    infoContainer.insertBefore(h2, infoContainer.children[-2]);
+    infoContainer.insertBefore(h2, infoContainer.children[2]);
 }
 
 // dictionary info function from preventing the same code over and over again
 const displayDictInfo = (id) => {
     const article = document.createElement("article");
     article.innerHTML = `
-            <p class="mt-3 font-bold">${id}</p>
+            <p class="mt-3 fw-bold">${id}</p>
             <h2>Meaning</h2>
             <ul id="${id}Container" class="mb-3">
             </ul>
